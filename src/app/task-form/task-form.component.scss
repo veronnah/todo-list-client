@@ -1,0 +1,39 @@
+.tasks__form {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+
+  .task__name {
+    width: 100%;
+    margin-right: 20px;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      height: 36px;
+      font-size: 20px;
+      outline: none;
+      border: 1px solid rgb(126, 126, 126);
+      border-radius: 4px;
+    }
+  }
+
+  .add__btn {
+    padding: 0 14px;
+    background-color: rgb(102, 250, 102);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+    color: rgb(63, 63, 63);
+    transition: .3s all;
+    box-shadow: 1px 3px 12px -2px #b0ff30;
+
+    &:hover {
+      background-color: rgb(149, 251, 149);
+      color: #000;
+    }
+  }
+}
