@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "title": "do homework",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "exercices ",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "title": "Meeting 4 AM",
+      "completed": false,
+      "id": 3
+    }
+  ]
+}

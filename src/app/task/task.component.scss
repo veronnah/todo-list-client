@@ -6,6 +6,7 @@
   border: 1px dashed rgb(74, 228, 74);
   margin-bottom: 6px;
 
+
   span {
     font-size: 20px;
   }
@@ -33,4 +34,9 @@
     cursor: pointer;
     font-size: 28px;
   }
+}
+
+.completed{
+
+  text-decoration: line-through;
 }

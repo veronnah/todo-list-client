@@ -31,9 +31,11 @@
     transition: .3s all;
     box-shadow: 1px 3px 12px -2px #b0ff30;
 
-    &:hover {
-      background-color: rgb(149, 251, 149);
-      color: #000;
+    &:disabled{
+      background-color: #ececec;
+      box-shadow: 1px 3px 12px -2px #959595;
+      color: rgb(104, 104, 104);
+      cursor: not-allowed;
     }
   }
 }
