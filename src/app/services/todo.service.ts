@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { delay } from "rxjs/operators";
+import { environment } from 'src/environments/environment';
 
 export interface Task{
   id?: number,
   title: string,
-  completed: boolean
+  completed: boolean,
 }
+
+const API_URL = environment.api;
 
 @Injectable({
   providedIn: 'root'
@@ -17,17 +19,17 @@ export class TodoService {
   constructor(private http: HttpClient){};
 
   public addTask(task: Task): Observable<Task>{
-    return this.http.post<Task>('http://localhost:3000/tasks', task);
+    return this.http.post<Task>(API_URL, task);
   }
   public fetchTasks(): Observable<Task[]>{
-    return this.http.get<Task[]>('http://localhost:3000/tasks');
+    return this.http.get<Task[]>(API_URL);
   }
   public removeTask(id?: number): Observable<void>{
-   return this.http.delete<void>(`http://localhost:3000/tasks/${id}`);
+   return this.http.delete<void>(`${API_URL}${id}`);
   }
 
   public completeTask(task: Task):Observable<Task>{
-    return this.http.put<Task>(`http://localhost:3000/tasks/${task.id}`, task);
+    return this.http.put<Task>(`${API_URL}${task.id}`, task);
   }
 
 

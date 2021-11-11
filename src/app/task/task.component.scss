@@ -1,26 +1,53 @@
+::ng-deep {
+  .example-margin {
+    .mat-checkbox-inner-container {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin-right: 14px;
+    }
+  }
+
+  .mat-fab {
+    width: 34px;
+    height: 34px;
+
+    .mat-button-wrapper {
+      padding: 0;
+    }
+
+    .mat-icon {
+      font-size: 20px;
+      height: 22px;
+      width: 24px;
+    }
+  }
+
+  .mat-checkbox-frame, .mat-checkbox-background {
+    border-radius: 5px !important;
+  }
+}
+
 .task {
-  padding: 15px;
+  margin-top: 10px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px dashed rgb(74, 228, 74);
+  border: 1px dashed #d8d8d8;
   margin-bottom: 6px;
-
 
   span {
     font-size: 20px;
+
+    &.completed {
+      text-decoration: line-through;
+    }
   }
 
   .task__btns {
     display: flex;
     align-items: center;
-  }
-
-  input[type=checkbox] {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin-right: 10px;
   }
 
   .delete__btn {
@@ -36,7 +63,4 @@
   }
 }
 
-.completed{
 
-  text-decoration: line-through;
-}

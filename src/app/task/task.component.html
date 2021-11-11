@@ -1,7 +1,12 @@
 <div class="task">
   <span [class.completed]="task.completed">{{task?.title}}</span>
-  <span class="task__btns">
-    <input type="checkbox" [checked]="task.completed" (change)="completeTask()" >
-    <button class="delete__btn" (click)="removeTask()">&times;</button>
-  </span>
+  <div class="task__btns">
+     <mat-checkbox color="primary" class="example-margin" [checked]="task.completed"
+                   (change)="completeTask()"></mat-checkbox>
+      <div class="example-button-container">
+        <button mat-fab color="warn" aria-label="Example icon button with a delete icon" (click)="removeTask()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+  </div>
 </div>

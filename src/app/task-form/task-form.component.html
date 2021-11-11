@@ -1,6 +1,11 @@
 <div class="tasks__form">
   <div class="task__name">
-    <input type="text" placeholder="Название" [(ngModel)]="taskTitle" (keyup.enter)="addTask()">
+    <mat-form-field appearance="standard">
+      <mat-label>Start typing here...</mat-label>
+      <input matInput placeholder="Name" [(ngModel)]="taskTitle" (keyup.enter)="addTask()">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addTask()"
+            [disabled]="taskTitle === undefined || taskTitle.trim()?.length == 0">Add task
+    </button>
   </div>
-  <button class="add__btn" (click)="addTask()" [disabled]="taskTitle === undefined || taskTitle.trim()?.length == 0" (ngSubmit)="addTask()" type="submit">Add</button>
 </div>

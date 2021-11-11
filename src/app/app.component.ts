@@ -1,13 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output
-} from '@angular/core';
-import {
-  TodoService,
-  Task
-} from './services/todo.service';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {TodoService, Task} from './services/todo.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +9,7 @@ import {
 export class AppComponent implements OnInit {
 
   constructor(private todoService: TodoService) {}
+
   public tasks: Task[] = [];
 
   ngOnInit() {
@@ -34,7 +27,7 @@ export class AppComponent implements OnInit {
       })
   }
 
-  public removeTask(id ? : number) {
+  public removeTask(id ?: number) {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }

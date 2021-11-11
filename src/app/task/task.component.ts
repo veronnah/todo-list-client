@@ -1,5 +1,5 @@
-import { Component, EventEmitter,  Input, Output, OnInit } from '@angular/core';
-import { TodoService, Task } from '../services/todo.service';
+import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
+import {TodoService, Task} from '../services/todo.service';
 
 @Component({
   selector: 'app-task',
@@ -9,23 +9,25 @@ import { TodoService, Task } from '../services/todo.service';
 
 export class TaskComponent implements OnInit {
   @Input() task: Task;
+  @Input() index: number;
   @Output() removeTaskEvent = new EventEmitter<number>();
 
-  constructor(private todoService: TodoService){};
+  constructor(private todoService: TodoService) {
+  };
 
   ngOnInit(): void {
   }
 
-  public removeTask(){
+  public removeTask() {
     this.todoService.removeTask(this.task.id)
-    .subscribe(task =>{
-      this.removeTaskEvent.emit(this.task.id);
-    })
+      .subscribe(() => {
+        this.removeTaskEvent.emit(this.task.id);
+      })
   }
 
-  public completeTask(){
-      this.task.completed = !this.task.completed;
-      this.todoService.completeTask(this.task)
+  public completeTask() {
+    this.task.completed = !this.task.completed;
+    this.todoService.completeTask(this.task)
       .subscribe(task => {
         this.task = task;
       })
