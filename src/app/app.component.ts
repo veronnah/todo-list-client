@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {TodoService, Task} from './services/todo.service';
+import {TodoService} from './services/todo.service';
+import {Task} from './models/task.model';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,9 @@ import {TodoService, Task} from './services/todo.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  public tasks: Task[] = [];
 
   constructor(private todoService: TodoService) {}
-
-  public tasks: Task[] = [];
 
   ngOnInit() {
     this.fetchTasks();
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   public fetchTasks() {
     this.todoService.fetchTasks()
       .subscribe(tasks => {
-        this.tasks = tasks.sort((a, b) => a < b ? -1 : a > b ? 1 : 0);
+        this.tasks = tasks;
       })
   }
 

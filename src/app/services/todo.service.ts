@@ -1,20 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { environment } from 'src/environments/environment';
-
-export interface Task{
-  id?: number,
-  title: string,
-  completed: boolean,
-}
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {environment} from 'src/environments/environment';
+import {Task} from '../models/task.model';
 
 const API_URL = environment.api;
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class TodoService {
   constructor(private http: HttpClient){};
 

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
-import {TodoService, Task} from '../services/todo.service';
+import {TodoService} from '../services/todo.service';
+import {Task} from '../models/task.model';
 
 @Component({
   selector: 'app-task',
@@ -12,11 +13,9 @@ export class TaskComponent implements OnInit {
   @Input() index: number;
   @Output() removeTaskEvent = new EventEmitter<number>();
 
-  constructor(private todoService: TodoService) {
-  };
-
-  ngOnInit(): void {
-  }
+  constructor(private todoService: TodoService) {}
+  
+  ngOnInit(): void {}
 
   public removeTask() {
     this.todoService.removeTask(this.task.id)
